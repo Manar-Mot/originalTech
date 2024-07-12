@@ -7,7 +7,7 @@ export default async function getProductById({ productId }: IParams) {
     const products = await prisma?.product.findUnique({
       where: { id: productId },
       include: {
-        Reviews: {
+        reviews: {
           include: {
             user: { select: { name: true, email: true, image: true } },
           },

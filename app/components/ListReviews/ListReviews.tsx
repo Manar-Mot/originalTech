@@ -15,7 +15,7 @@ const ListReviews: React.FC<ListReviewsProps> = ({
   product,
   user,
 }) => {
-  if (reviews.length === 0)
+  if (reviews?.length === 0)
     return (
       <div className="w-full h-full grid place-items-center ">
         No Reviews Add Yet
@@ -41,7 +41,7 @@ const ListReviews: React.FC<ListReviewsProps> = ({
             <div className=" w-full flex flex-col ">
               <div className="flex items-center justify-between w-full ">
                 <div className="font-semibold capitalize">
-                  {review.user.name}
+                  {review?.user.name}
                 </div>
                 <div className=" ">
                   <ReviewsComp reviews={reviews} />
@@ -51,7 +51,7 @@ const ListReviews: React.FC<ListReviewsProps> = ({
                 {review.comment}
               </div>
               <div className=" mt-1 ml-auto justify-end self-end text-slate-400 text-xs  ">
-                {moment(review.createdAt).fromNow()}
+                {moment(review?.createdAt).fromNow()}
               </div>
             </div>
           </li>

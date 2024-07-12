@@ -84,7 +84,7 @@ export default async function getProducts(
         ],
       },
       include: {
-        Reviews: {
+        reviews: {
           include: {
             user: true,
           },
