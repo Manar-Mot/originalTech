@@ -13,9 +13,6 @@ import AdminNav from "../components/Admin/AdminNav";
 import { HiBars3 } from "react-icons/hi2";
 import Link from "next/link";
 import Image from "next/image";
-
-import AdminNavItem from "../components/Admin/AdminNavItem";
-import { MdDashboard } from "react-icons/md";
 import { useMediaQuery } from "@mui/material";
 import { AppLogo } from "@/public/assets";
 
