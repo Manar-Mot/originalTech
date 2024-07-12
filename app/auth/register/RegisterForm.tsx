@@ -30,7 +30,7 @@ const RegisterForm: React.FC<CurrentUserProps> = ({ currentUser }) => {
       router.push("/cart");
       router.refresh();
     }
-  }, []);
+  }, [currentUser]);
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios

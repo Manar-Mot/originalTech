@@ -50,6 +50,13 @@ const AddProductForm = () => {
       price: "",
     },
   });
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldValidate: true,
+      shouldTouch: true,
+    });
+  };
   useEffect(() => {
     setCustomValue("images", images);
   }, [images]);
@@ -59,13 +66,6 @@ const AddProductForm = () => {
     setIsProductCreated(false);
   }, [isProductCreated]);
   const category = watch("category");
-  const setCustomValue = (id: string, value: any) => {
-    setValue(id, value, {
-      shouldDirty: true,
-      shouldValidate: true,
-      shouldTouch: true,
-    });
-  };
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     startLoading();
     let uploadedImages: UplodedImageType[] = [];

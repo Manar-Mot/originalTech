@@ -33,7 +33,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         return { ...prev, selectedImage: value };
       });
     },
-    [cart.selectedImage]
+    []
   );
   const handleQtyDec = useCallback(() => {
     if (cart.quantity <= 1) return;

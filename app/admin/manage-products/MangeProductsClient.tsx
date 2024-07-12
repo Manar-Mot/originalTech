@@ -134,7 +134,7 @@ const MangeProductsClient: React.FC<ManageProductsClientProps> = ({
           toast.error("An error occurred while updating product status");
         });
     },
-    []
+    [router]
   );
   const handleDelete = useCallback(async (id: string, images: any[]) => {
     toast("Deleting product please wait...");
@@ -162,7 +162,7 @@ const MangeProductsClient: React.FC<ManageProductsClientProps> = ({
         toast.error("Error deleting");
         console.log("Error deleting");
       });
-  }, []);
+  }, [router]);
 
   return (
     <div className="my-8 bg-red-500 ">

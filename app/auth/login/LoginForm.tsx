@@ -29,7 +29,7 @@ const LoginForm: React.FC<CurrentUserProps> = ({ currentUser }) => {
       router.push("/cart");
       router.refresh();
     }
-  }, []);
+  }, [currentUser]);
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     signIn("credentials", { ...data, redirect: false }).then((callback) => {

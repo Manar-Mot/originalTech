@@ -177,7 +177,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         console.error(error);
         toast.error("An error occurred while updating product status");
       });
-  }, []);
+  }, [router]);
 
   const handleDeliver = useCallback(async (id: string) => {
     await axios
@@ -193,7 +193,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         console.error(error);
         toast.error("An error occurred while updating product status");
       });
-  }, []);
+  }, [router]);
 
   return (
     <div className="my-8 min-h-[60vh] max-w-[1150px]">
