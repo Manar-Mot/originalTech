@@ -18,7 +18,7 @@ export interface Review {
   };
 }
 export interface ProductCardProps {
-  productItem: Product;
+  productItem: any;
 }
 export interface ProductImage {
   color: string;

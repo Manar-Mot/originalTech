@@ -124,7 +124,7 @@ const StoreClient: React.FC<StoreClientProps> = ({
                     : "grid-cols-2 gap-2 md:grid-cols-2 lg:grid-cols-4"
                 }`}
               >
-                {products.map((item, index) => (
+                {products?.map((item, index) => (
                   <div
                     key={index}
                     className={` ${
@@ -134,9 +134,9 @@ const StoreClient: React.FC<StoreClientProps> = ({
                     } mx-auto`}
                   >
                     {direction === "vertical" ? (
-                      <ProductCard productItem={item} />
+                      item&&<ProductCard productItem={item} />
                     ) : direction === "horizontal" ? (
-                      <ProductCardHorizontal productItem={item} />
+                      item&&<ProductCardHorizontal productItem={item} />
                     ) : (
                       <></>
                     )}

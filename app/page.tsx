@@ -20,7 +20,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <Banner />
       <ServicesSection />
       <UniqueProducts products={topRatedProducts} title="Featured Products" />
-      {/* <UpComming /> */}
+      <UpComming />
       <UniqueProducts products={newProducts} title="New Products" />
       <View />
       <Brands />
