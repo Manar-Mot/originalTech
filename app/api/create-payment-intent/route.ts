@@ -7,21 +7,19 @@ import { getCurrentUser } from "@/services/getCurrentUser";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2023-10-16",
 });
-
 const calculateServerAmount = (items: CartProduct[]) => {
-  const totalPrice = items.reduce((acc, item) => {
+  const totaPrice = items.reduce((acc, item) => {
     const totalPriceForItem = item.price * item.quantity;
     return acc + totalPriceForItem;
   }, 0);
-  return Math.floor(totalPrice);
+  const price = Math.floor(totaPrice);
+  return price;
 };
-
 export async function POST(request: Request) {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "unauthorized" }), { status: 401 };
   }
-
   const body = await request.json();
   const { items, paymentIntentId } = body;
   const total = calculateServerAmount(items) * 100;
@@ -34,14 +32,15 @@ export async function POST(request: Request) {
     paymentIntentId: paymentIntentId,
     products: items,
   };
-
   if (paymentIntentId) {
     const currentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
     if (currentIntent) {
-      const updatedIntent = await stripe.paymentIntents.update(paymentIntentId, {
-        amount: total,
-      });
-
+      const updatedIntent = await stripe.paymentIntents.update(
+        paymentIntentId,
+        {
+          amount: total,
+        }
+      );
       const [existingOrder, updatedOrder] = await Promise.all([
         prisma.order.findFirst({ where: { paymentIntentId: paymentIntentId } }),
         prisma.order.update({
@@ -52,9 +51,11 @@ export async function POST(request: Request) {
           },
         }),
       ]);
-
       if (!existingOrder) {
-        return NextResponse.json({ error: "invalid Payment intent" }, { status: 400 });
+        return NextResponse.json(
+          { error: "invalid Payment intent" },
+          { status: 400 }
+        );
       }
       return NextResponse.json({ paymentIntent: updatedIntent });
     }
@@ -70,6 +71,4 @@ export async function POST(request: Request) {
     });
     return NextResponse.json({ paymentIntent });
   }
-
-  return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
 }
