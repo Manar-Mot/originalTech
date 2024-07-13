@@ -57,7 +57,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   }, [cartProducts]);
   return (
     
-      <div className=" md:w-[90%] gap-6  p-10 mx-auto flex   flex-col lg:flex-row bg-white shadow-lg rounded-md">
+      <div className=" w-full md:w-[90%] gap-6  p-10 mx-auto flex   flex-col lg:flex-row bg-white shadow-lg rounded-md">
         <ProductGallery
           cartProduct={cart}
           product={product}

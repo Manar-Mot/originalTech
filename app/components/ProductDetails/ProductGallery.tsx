@@ -17,7 +17,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
     <div className="flex flex-col justify-between items-center  h-full ">
       <ProductImageMagnify src={cartProduct.selectedImage.url} />
       {product.images && (
-        <div className=" max-w-[400px] min-w-[300px]  mt-4  px-8  ">
+        <div className="max-w-[300px] md:max-w-[400px] min-w-[300px]  mt-4  px-8  ">
           <Slider
             dots={false}
             infinite={false}
