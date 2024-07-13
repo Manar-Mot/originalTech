@@ -18,7 +18,7 @@ const responsiveSettings = [
   {
     breakpoint: 600,
     settings: {
-      slidesToShow: 2,
+      slidesToShow: 1,
       centerMode:false,
       slidesToScroll: 1,
     },

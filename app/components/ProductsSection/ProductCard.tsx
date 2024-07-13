@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ productItem }) => {
     <div
       key={productItem.id}
       className="cursor-pointer border border-slate-200 flex flex-col items-center 
-      justify-between mx-auto w-[180px] md:w-[210px] h-72  relative px-4 py-8 bg-white rounded-md shadow-lg transform
+      justify-between mx-auto w-[95%] md:w-[210px] h-72  relative px-4 py-8 bg-white rounded-md shadow-lg transform
        transition-all duration-300 hover:scale-90"
       onClick={() => router.push(`/product/${productItem.id}`)}
       onMouseEnter={() => setHoverCard(true)}

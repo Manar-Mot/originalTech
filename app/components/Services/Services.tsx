@@ -9,16 +9,16 @@ import { lines } from "@/public/assets";
 
 const Services = () => {
   return (
-
-      <div className=" pt-10 pb-20 bg-[#f8f8f8]  w-full relative overflow-hidden   ">
-          
-        {/* <div
+    <div className=" pt-10 pb-20 bg-[#f8f8f8]  w-full relative overflow-hidden   ">
+      {/* <div
           className="w-[400px] h-[400px] rounded-full absolute left-0 top-0 border-[0.5px]
            border-purple-100 bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgba(0,0,0,0.40)_0%,rgb(161,112,240,0.2)_50%)]"
         ></div> */}
-       <div className=" text-[42px] text-secondary-30 mx-auto w-fit font-semibold mb-10">Our Services</div>
-        <div className="w-[90%] mx-auto relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  items-center">
+      <div className=" text-[28px] md:text-[36px] lg:text-[42px] text-secondary-30 mx-auto w-fit font-semibold mb-10">
+      Our Services
+      </div>
 
+      <div className="w-[90%] mx-auto relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  items-center">
         <ServiceCard
           title="Money Back Guarantee"
           description="Guarantee up to one year"
@@ -48,8 +48,8 @@ const Services = () => {
             <HiMiniWallet className="text-4xl md:my-2 text-blue-500 tranform transition-all ease-linear duration-500 group-hover:scale-90" />
           }
         />
-         </div>
       </div>
+    </div>
   );
 };
 

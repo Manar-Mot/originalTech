@@ -24,7 +24,7 @@ const UniqueProducts: React.FC<ProductsSectionProps> = ({ products ,title}) => {
       <div className=" text-[28px] md:text-[36px] lg:text-[42px] text-secondary-30 mx-auto w-fit font-semibold mb-10">{title}</div>
 
 
-      <div className="  mx-auto relative py-8 w-[90%] gap-4 ">
+      <div className="  mx-auto relative py-8 w-[90%] gap-4 px-2 ">
         <Slider {...settings}>
           {tripledProducts.map((product, index: number) => (
             <ProductCard productItem={product} key={product.id} />
