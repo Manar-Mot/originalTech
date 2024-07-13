@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HiMiniBars3, HiMiniXMark } from "react-icons/hi2";
-import LinkList from "../NavBar/LinkList";
-import UserMenue from "../NavBar/UserMenue";
+import LinkList from "./LinkList";
+import UserMenue from "./UserMenue";
 import { CurrentUserProps } from "@/types";
-import SearchComponent from "../NavBar/SearchComp";
+import SearchComponent from "./SearchComp";
 import { chakraPetch } from "@/app/Fonts/Fonts";
 const NavComp: React.FC<CurrentUserProps> = ({ currentUser }) => {
   const [searchOpen, setSearchOpen] = useState(false);

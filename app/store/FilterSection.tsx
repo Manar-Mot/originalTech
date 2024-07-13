@@ -14,6 +14,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   handleQueryString,
   searchParams,
 }) => {
+  
   const readParams = useSearchParams();
   const router = useRouter();
   const params = new URLSearchParams(readParams?.toString());

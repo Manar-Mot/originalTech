@@ -6,6 +6,6 @@ export default function Loading() {
     // <div className="w-full h-full absolute top-0 left-0 bg-white  z-[999] grid place-items-center">
     // {/* <CircularProgress color="secondary" /> */}
     // </div>
-    <></>
+    <>loading</>
   );
 }

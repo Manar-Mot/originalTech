@@ -1,5 +1,5 @@
 import React from "react";
-import MangeProductsClient from "./MangeProductsClient";
+import MangeProductsClient from "../../components/Admin/MangeProductsClient";
 import Container from "@/app/components/sharedComponent/Container";
 import getProducts, { IProductParams } from "@/services/getProducts";
 import { getCurrentUser } from "@/services/getCurrentUser";

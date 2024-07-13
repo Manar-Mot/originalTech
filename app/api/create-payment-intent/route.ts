@@ -71,5 +71,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ paymentIntent });
   }
 
+  // If none of the above branches return, return an error response
   return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
 }

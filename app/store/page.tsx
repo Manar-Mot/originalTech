@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { Suspense, useCallback } from "react";
 import NullData from "../components/sharedComponent/NullData";
 import getProducts, { IProductParams } from "@/services/getProducts";
 import StoreClient from "./StoreClient";
@@ -18,13 +18,13 @@ const Shop: React.FC<IParams> = async ({ searchParams }) => {
   const shuffledProducts = shuffle(products);
   return (
     <>
-     
-
-      <StoreClient
-        products={shuffledProducts}
-        searchParams={searchParams}
-        totalPages={totalPages}
-      />
+      <Suspense >
+        <StoreClient
+          products={shuffledProducts}
+          searchParams={searchParams}
+          totalPages={totalPages}
+        />
+      </Suspense>
     </>
   );
 };

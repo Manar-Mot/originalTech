@@ -2,8 +2,7 @@
 import { Product } from "@prisma/client";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { formatPrice } from "@/app/utils";
-import Heading from "@/app/components/sharedComponent/Header";
-import Status from "@/app/components/sharedComponent/Status";
+
 import {
   MdCached,
   MdClose,
@@ -11,13 +10,16 @@ import {
   MdDone,
   MdRemoveRedEye,
 } from "react-icons/md";
-import ActionBtn from "@/app/components/Admin/ActionBtn";
+
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { deleteObject, getStorage, ref } from "firebase/storage";
 import firebaseApp from "@/libs/firebase";
+import Status from "../sharedComponent/Status";
+import Heading from "../sharedComponent/Header";
+import ActionBtn from "./ActionBtn";
 interface ManageProductsClientProps {
   products: Product[];
 }

@@ -2,7 +2,7 @@
 import Container from "@/app/components/sharedComponent/Container";
 import { getCurrentUser } from "@/services/getCurrentUser";
 import NullData from "@/app/components/sharedComponent/NullData";
-import ManageOrdersClient from "./ManageOrdersClient";
+import ManageOrdersClient from "../../components/Admin/ManageOrdersClient";
 import getOrders from "@/services/getOrders";
 
 const ManageOrders = async() => {

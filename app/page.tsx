@@ -8,10 +8,9 @@ import CategoriesSection from "./components/CategorySection/CategorySection";
 import  { IProductParams } from "@/services/getProducts";
 import getTopRatedProducts from "@/services/getUniqueProducts";
 import getNewProducts from "@/services/getNewProducts";
-interface HomeProps {
-  searchParams: IProductParams;
-}
-export default async function Home({ searchParams }: HomeProps) {
+import { Suspense } from "react";
+
+export default async function Home() {
   const { products:topRatedProducts } = await getTopRatedProducts();
   const { products:newProducts } = await getNewProducts();
   return (
