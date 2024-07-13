@@ -13,9 +13,9 @@ const ViewCard: React.FC<ViewCardProps> = ({ src, title, discount }) => {
         alt={title}
         className="w-full h-full object-cover absolute top-0 left-0 transition-all duration-1000 transform group-hover:scale-110"
       />
-      <div className="text-white  h-full absolute  top-0 left-0 flex flex-col w-fit pl-16 justify-center ">
+      <div className="text-white  h-full absolute  top-0 left-0 flex flex-col w-fit pl-6 lg:pl-16 justify-center ">
         <p className="text-sm text-[#d6d5d5]">{discount}% Discount</p>
-        <h2 className=" font-bold text-2xl ">{title}</h2>
+        <h2 className=" font-bold text-lg lg:text-2xl ">{title}</h2>
         <button className="w-fit mt-2 transition-all ease-linear duration-300 rounded-md py-1 px-3 shadow-lg bg-accent-10 hover:bg-[#42c0b3] text-center">
           Buy Now
         </button>
