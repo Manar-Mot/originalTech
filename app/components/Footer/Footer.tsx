@@ -76,8 +76,8 @@ const Footer = () => {
               />
               <FooterItemInfo
                 Icon={<FaPhone className="text-sm" />}
-                content="+963938354467"
-                link="tel:+963938354467"
+                content="+963938352445"
+                link="tel:+963938352445"
               />
               <FooterItemInfo
                 Icon={<FaEnvelope className="text-sm" />}
