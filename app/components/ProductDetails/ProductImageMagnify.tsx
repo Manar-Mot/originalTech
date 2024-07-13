@@ -9,7 +9,7 @@ const ProductImageMagnify: React.FC<ProductImageMagnifyProps> = ({ src }) => {
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
   const [showMagnifier, setShowMagnifier] = useState(false);
   return (
-    <div className=" relative border bg-black border-slate-400 rounded-md w-full md:w-[400px] h-[400px]  m-auto grid place-items-center">
+    <div className=" relative border  border-slate-400 rounded-md w-full md:w-[400px] h-[400px]  m-auto grid place-items-center">
       <Image
         src={src}
         className="  my-auto  border-red-400 object-cover"
