@@ -11,14 +11,14 @@ const UpComming = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-14 w-[90%] mx-auto">
         <Link
           href="#"
-          className="shadow-lg border-[0.5px] md:col-span-3 xl:col-span-2 cursor-pointer flex flex-col md:flex-row items-center justify-center bg-[#f6f6f6]"
+          className="shadow-lg border-[0.5px] md:col-span-3 xl:col-span-2 cursor-pointer flex flex-col md:flex-row items-center justify-center bg-white"
         >
           <Image
             src={UpComming2}
             alt="Upcoming Product 2"
             width={160}
             height={160}
-            className="w-40 h-auto object-contain"
+            className="w-60  h-auto object-contain"
           />
           <div className="lg:max-w-[50%] h-full p-10 bg-white flex flex-col justify-center gap-4">
             <h2 className="text-md font-semibold text-slate-600">
@@ -73,7 +73,7 @@ const UpComming = () => {
             alt="Upcoming Product 1"
             width={200}
             height={200}
-            className="w-50 h-50 object-contain z-[3]"
+            className="w-50 h-auto object-contain z-[3]"
           />
         </Link>
       </div>
