@@ -28,14 +28,14 @@ const LinkList = ({handleOpenSearchModal,scrolled}:{handleOpenSearchModal:()=>vo
         }
         navigate={() => router.push(`/cart`)}
       />
-      <CircleCounter
+      {/* <CircleCounter
         title="compare "
         count={0}
         icon={
           <HiOutlineSquare3Stack3D  size={24} className="   cursor-pointer" />
         }
         navigate={() => router.push(`/cart`)}
-      />
+      /> */}
 
       <CircleCounter
         title="cart "

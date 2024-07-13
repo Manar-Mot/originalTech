@@ -26,7 +26,7 @@ const UserMenue: React.FC<CurrentUserProps> = ({ currentUser }) => {
         {isOpen && (
           <div
             className="absolute rounded-md shadow-md
-       w-[170px] bg-white overflow-hidden right-0 top-12 text-sm flex flex-col cursor-pointer"
+       w-[170px] bg-white overflow-hidden right-0 top-12 text-sm text-slate-600 flex flex-col cursor-pointer"
           >
             {currentUser ? (
               <div>

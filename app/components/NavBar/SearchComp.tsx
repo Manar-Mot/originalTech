@@ -37,14 +37,14 @@ const SearchComponent = ({isOpen,handleOpenSearchModal}:{isOpen:boolean,handleOp
   };
 
   return (
-    <div className={` fixed transition-all ease-linear duration-75 w-full flex flex-col items-center z-[1000]  h-[400px] bg-purple-800 ${isOpen?"   top-0 left-0":"  -top-[400px] left-0   "}`}>
-      <MdClose size={20} onClick={handleOpenSearchModal}/>
-    <div className="flex items-center h-10 w-60">
+    <div className={` fixed transition-all ease-linear duration-75 w-full flex flex-col items-center z-[1000] border-b shadow-md border-slate-200  h-[200px] bg-white ${isOpen?"   top-0 left-0":"  -top-[400px] left-0   "}`}>
+      <MdClose size={20} onClick={handleOpenSearchModal} className="absolute top-4 left-4 cursor-pointer"/>
+    <div className="flex items-center h-10 w-[80%] mt-20">
       <input
         {...register("searchTerm")}
         type="text"
         placeholder="Search here..."
-        className="focus:border-[#7142bd] outline-none  h-full bg-white text-gray-800 border border-slate-400 w-[100%] px-4 py-1 rounded-l-lg"
+        className="focus:border-[#7142bd] outline-none  h-full bg-white text-gray-800 border border-slate-400 w-full px-4 py-1 rounded-l-lg"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
