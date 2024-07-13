@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
-import Header from "../components/sharedComponent/Header";
-import ButtonComp from "../components/sharedComponent/ButtonComp";
+import Header from "../sharedComponent/Header";
+import ButtonComp from "../sharedComponent/ButtonComp";
 
 import ItemContent from "./ItemContent";
-import { formatPrice } from "../utils";
 import { CurrentUserProps } from "@/types";
 import { useRouter } from "next/navigation";
+import { formatPrice } from "@/app/utils";
 
 const CartClient: React.FC<CurrentUserProps> = ({ currentUser }) => {
   const { cartProducts, handleClearCard, cartTotalQty } = useCart();

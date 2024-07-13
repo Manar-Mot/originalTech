@@ -1,29 +1,19 @@
-import React, { Suspense, useCallback } from "react";
+"use client";
+import React, { useEffect, useState, Suspense } from "react";
 import NullData from "../components/sharedComponent/NullData";
-import getProducts, { IProductParams } from "@/services/getProducts";
-import StoreClient from "./StoreClient";
-export interface IParams {
+import { IProductParams } from "@/services/getProducts";
+import axios from "axios";
+import StoreClient from "../components/store/StoreClient";
+
+interface IParams {
   searchParams: IProductParams;
 }
-const Shop: React.FC<IParams> = async ({ searchParams }) => {
-  const { products, totalPages } = await getProducts(searchParams);
 
-  function shuffle(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-  const shuffledProducts = shuffle(products);
+const Shop: React.FC<IParams> = ({ searchParams }) => {
   return (
     <>
-      <Suspense >
-        <StoreClient
-          products={shuffledProducts}
-          searchParams={searchParams}
-          totalPages={totalPages}
-        />
+      <Suspense>
+        <StoreClient searchParams={searchParams} />
       </Suspense>
     </>
   );

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import CartProvider from "./providers/CartProvider";
 import { plus_Jakarta_Sans } from "./Fonts/Fonts";
 import { Toaster } from "react-hot-toast";
 import { LoadingProvider } from "./hooks/useLoading";
 import Container from "./components/sharedComponent/Container";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Suspense } from "react";
+import CartProvider from "./providers/CartProvider";
 export const metadata: Metadata = {
   title: "OriginalTech",
   description: "ECommerceApp",
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body
         className={`${plus_Jakarta_Sans.className} text-slate-700 relative `}
       >
+        <Suspense>
+
         <AppRouterCacheProvider>
           <Toaster
             toastOptions={{
@@ -35,8 +38,7 @@ export default function RootLayout({
                 <div className="w-full flex flex-col justify-between min-h-screen">
                   <NavBar />
                   <main className="bg-[#f8fafa] flex-1 ">
-                    {" "}
-                    <Suspense> {children}</Suspense>
+                   {children}
                   </main>
                   <Footer />
                 </div>
@@ -44,6 +46,7 @@ export default function RootLayout({
             </CartProvider>
           </LoadingProvider>
         </AppRouterCacheProvider>
+        </Suspense>
       </body>
     </html>
   );

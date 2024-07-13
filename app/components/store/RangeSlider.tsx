@@ -1,8 +1,9 @@
 import { Slider } from "@mui/material";
 import React from "react";
-import { formatPrice } from "../utils";
-import ButtonComp from "../components/sharedComponent/ButtonComp";
+
 import { FilterSectionProps } from "./types";
+import { formatPrice } from "@/app/utils";
+import ButtonComp from "../sharedComponent/ButtonComp";
 
 const RangeSlider: React.FC<FilterSectionProps> = ({
   handlePriceFilter,

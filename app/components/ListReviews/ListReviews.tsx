@@ -3,7 +3,7 @@ import { Product, Review } from "../ProductsSection/types";
 import moment from "moment";
 import ReviewsComp from "../sharedComponent/ReviewsComp";
 import Avatar from "../sharedComponent/Avatar";
-import AddRating from "@/app/product/[productId]/AddRating";
+import AddRating from "@/app/components/product/AddRating";
 import { safeUser } from "@/types";
 interface ListReviewsProps {
   reviews: any;

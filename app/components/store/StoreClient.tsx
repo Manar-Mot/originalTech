@@ -1,23 +1,53 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import FilterSection from "./FilterSection";
-import ProductCard from "../components/ProductsSection/ProductCard";
-import ProductCardHorizontal from "../components/ProductsSection/ProductCardHorizontal";
+
 import { HiOutlineViewBoards, HiOutlineViewList } from "react-icons/hi";
-import DisplayPages from "../components/sharedComponent/DisplayPages";
 import { StoreClientProps } from "./types";
 import { IProductParams } from "@/services/getProducts";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { storeBanner } from "@/public/assets";
-import { formatPath } from "../utils";
+import axios from "axios";
+import { formatPath } from "@/app/utils";
+import ProductCard from "../ProductsSection/ProductCard";
+import ProductCardHorizontal from "../ProductsSection/ProductCardHorizontal";
+import DisplayPages from "../sharedComponent/DisplayPages";
 
-const StoreClient: React.FC<StoreClientProps> = ({
-  products,
-  searchParams,
-  totalPages,
-}) => {
+const StoreClient: React.FC<StoreClientProps> = ({ searchParams }) => {
+  const [products, setProducts] = useState<any[]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.get("/api/getProducts", {
+          params: searchParams,
+        });
+        setProducts(response.data.products);
+        setTotalPages(response.data.totalPages);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [searchParams]);
+
+  function shuffle(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledProducts = shuffle(products);
   const readParams = useSearchParams();
   const minPrice = readParams?.get("minPrice");
   const maxPrice = readParams?.get("maxPrice");
@@ -82,7 +112,7 @@ const StoreClient: React.FC<StoreClientProps> = ({
           className="absolute top-0 left-0 w-full h-full bg-purple-700 bg-opacity-35
           py-10 px-20 text-white  text-[32px] flex items-end capitalize"
         >
-          {pathname&&formatPath(pathname)}
+          {pathname && formatPath(pathname)}
         </div>
       </div>
       <div className="w-[90%] mx-auto  max-w-[1200px] ">
@@ -109,7 +139,7 @@ const StoreClient: React.FC<StoreClientProps> = ({
               </div>
               <div>Showing 9/12 Item</div>
             </div>
-            {products.length === 0 ? (
+            {shuffledProducts.length === 0 ? (
               <div className="text-2xl w-full h-full grid place-items-center">
                 <div>
                   <div className="text-center mb-8">Oops !</div>
@@ -124,7 +154,7 @@ const StoreClient: React.FC<StoreClientProps> = ({
                     : "grid-cols-2 gap-2 md:grid-cols-2 lg:grid-cols-4"
                 }`}
               >
-                {products?.map((item, index) => (
+                {shuffledProducts?.map((item, index) => (
                   <div
                     key={index}
                     className={` ${
@@ -134,9 +164,9 @@ const StoreClient: React.FC<StoreClientProps> = ({
                     } mx-auto`}
                   >
                     {direction === "vertical" ? (
-                      item&&<ProductCard productItem={item} />
+                      item && <ProductCard productItem={item} />
                     ) : direction === "horizontal" ? (
-                      item&&<ProductCardHorizontal productItem={item} />
+                      item && <ProductCardHorizontal productItem={item} />
                     ) : (
                       <></>
                     )}

@@ -8,9 +8,9 @@ interface SearchParams {
   sort?: string | null;
 }
 export interface StoreClientProps {
-  products: Product[];
+  products?: Product[];
   searchParams: IProductParams;
-  totalPages: number;
+  totalPages?: number;
 }
 export interface FilterSectionProps {
   handlePriceFilter: (event: Event, newValue: number | number[]) => void;

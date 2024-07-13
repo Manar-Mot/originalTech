@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../../components/sharedComponent/Container";
 import FormWrap from "../../components/sharedComponent/FormWrap";
-import RegisterForm from "./RegisterForm";
+import RegisterForm from "../../components/auth/RegisterForm";
 import { getCurrentUser } from "@/services/getCurrentUser";
 
 const Register = async () => {

@@ -1,10 +1,10 @@
 import React from "react";
-import { CartProduct } from "../components/ProductDetails/types";
-import { formatPrice, truncateText } from "../utils";
+import { CartProduct } from "../ProductDetails/types";
+import { formatPrice, truncateText } from "../../utils";
 import Link from "next/link";
 import Image from "next/image";
-import SetQuantity from "../components/ProductDetails/SetQuantity";
-import { useCart } from "../hooks/useCart";
+import SetQuantity from "../ProductDetails/SetQuantity";
+import { useCart } from "../../hooks/useCart";
 interface ItemContentProps {
   item: CartProduct;
 }

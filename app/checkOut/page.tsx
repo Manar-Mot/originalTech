@@ -1,5 +1,5 @@
 import React from "react";
-import CheckOutClient from "./CheckOutClient";
+import CheckOutClient from "../components/checkOut/CheckOutClient";
 import Container from "../components/sharedComponent/Container";
 import FormWrap from "../components/sharedComponent/FormWrap";
 

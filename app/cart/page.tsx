@@ -1,6 +1,6 @@
 import React from "react";
-import CartClient from "./CartClient";
 import { getCurrentUser } from "@/services/getCurrentUser";
+import CartClient from "../components/cart/CartClient";
 const Cart = async () => {
   const currentUser = await getCurrentUser();
   return (

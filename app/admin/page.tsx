@@ -1,9 +1,10 @@
 import React, { Suspense } from "react";
-import Summary from "./summary/Summary";
-import { getSummary } from "@/services/getSummary";
+import Summary from "../components/Admin/summary/Summary";
+
 
 const Admin = async () => {
-  const data = await getSummary();
+  // const data = await getSummary();
+  const data={}
   return (
     <>
  

@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Input from "../../components/Inputes/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import ButtonComp from "../../components/sharedComponent/ButtonComp";
 import Link from "next/link";
 import { AiOutlineGoogle } from "react-icons/ai";
 import axios from "axios";
@@ -10,6 +8,8 @@ import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { CurrentUserProps } from "@/types";
+import ButtonComp from "@/app/components/sharedComponent/ButtonComp";
+import Input from "@/app/components/Inputes/Input";
 
 const RegisterForm: React.FC<CurrentUserProps> = ({ currentUser }) => {
   const [isLoading, setIsLoading] = useState(false);

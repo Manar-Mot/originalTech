@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { Category, Color, categories } from "../utils/categories";
-import { colors } from "../utils/colors";
 import RangeSlider from "./RangeSlider";
 import { useRouter, useSearchParams } from "next/navigation";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { FilterSectionProps } from "./types";
-import { formatPrice } from "../utils";
+import { formatPrice } from "@/app/utils";
+import { categories, Category, Color } from "@/app/utils/categories";
+import { colors } from "@/app/utils/colors";
 
 const FilterSection: React.FC<FilterSectionProps> = ({
   handlePriceFilter,

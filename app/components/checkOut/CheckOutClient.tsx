@@ -1,14 +1,14 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
 import { json } from "stream/consumers";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { StripeElementsOptions, loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import ButtonComp from "../sharedComponent/ButtonComp";
+import { useLoading } from "../../hooks/useLoading";
 import CheckoutForm from "./CheckoutForm";
-import ButtonComp from "../components/sharedComponent/ButtonComp";
-import { useLoading } from "../hooks/useLoading";
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
 );

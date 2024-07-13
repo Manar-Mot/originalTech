@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageType } from "@/app/admin/add-products/types";
+import { ImageType } from "@/types/types";
 import { useCallback, useEffect, useState } from "react";
 import SelectImage from "./SelectImage";
 import ButtonComp from "../sharedComponent/ButtonComp";

@@ -10,7 +10,7 @@ import CategoryInput from "@/app/components/Inputes/CategoryInput";
 import { colors } from "@/app/utils/colors";
 import SelectColor from "@/app/components/Inputes/SelectColor";
 import { useCallback, useEffect, useState } from "react";
-import { ImageType, UplodedImageType } from "../../admin/add-products/types";
+import { ImageType, UplodedImageType } from "../../../types/types";
 import ButtonComp from "@/app/components/sharedComponent/ButtonComp";
 import toast from "react-hot-toast";
 import { useLoading } from "@/app/hooks/useLoading";

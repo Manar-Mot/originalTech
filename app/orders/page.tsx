@@ -3,8 +3,8 @@ import Container from "@/app/components/sharedComponent/Container";
 import { getCurrentUser } from "@/services/getCurrentUser";
 import NullData from "@/app/components/sharedComponent/NullData";
 
-import OrderClient from "./OrderClient";
 import getOrdersByUserId from "@/services/getOrdersByUserId";
+import OrderClient from "../components/OrderClient";
 
 const Orders = async() => {
     const currentUser = await getCurrentUser();

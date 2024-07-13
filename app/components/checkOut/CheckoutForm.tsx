@@ -6,12 +6,12 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import { useCart } from "../hooks/useCart";
-import { formatPrice } from "../utils";
+import { useCart } from "../../hooks/useCart";
+import { formatPrice } from "../../utils";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
-import ButtonComp from "../components/sharedComponent/ButtonComp";
-import { useLoading } from "../hooks/useLoading";
+import ButtonComp from "../sharedComponent/ButtonComp";
+import { useLoading } from "../../hooks/useLoading";
 
 interface CheckoutFormProps {
   clientSecret: string;

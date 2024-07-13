@@ -5,8 +5,8 @@ import { products } from "@/app/utils/products";
 import { getCurrentUser } from "@/services/getCurrentUser";
 import getProductById from "@/services/getProductById";
 import React from "react";
-import AddRating from "./AddRating";
-import MoreInfo from "./MoreInfo";
+import AddRating from "../../components/product/AddRating";
+import MoreInfo from "../../components/product/MoreInfo";
 interface IParams {
   productId?: string;
 }
